@@ -4,15 +4,17 @@ from pygame.locals import *
 class Game:
     def __init__(self):
         self.running = True
-        self.screen = self.init_game()
+        self.screen = None
 
-    def game_loop():
+        self.init_game()
+
+    def game_loop(self):
         print("Game Loop Start")
 
-    def render_loop():
+    def render_loop(self):
         print("Render Loop Start")
 
-    def poll_events():
+    def poll_events(self):
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:  
                 return False
@@ -20,11 +22,11 @@ class Game:
         pygame.display.flip()
         return True
 
-    def init_game():
+    def init_game(self):
         print("Game Init Start")
         pygame.init()
         screen = pygame.display.set_mode((400,500)) 
-        screen
+        self.screen = screen
 
 game = Game()
 
