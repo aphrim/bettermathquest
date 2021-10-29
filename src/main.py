@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 
-
 class Game:
     def __init__(self):
         self.running = True
@@ -27,11 +26,10 @@ class Game:
         screen = pygame.display.set_mode((400,500)) 
         screen
 
-
 game = Game()
 
 while game.running:
-    if ( not game.poll_events() ):
+    if not game.poll_events():
         pygame.quit()
         break
     game.game_loop()
