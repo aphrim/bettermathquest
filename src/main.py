@@ -9,13 +9,13 @@ class Game:
 
         self.init_game()
 
-    def game_loop():
+    def game_loop(self):
         print("Game Loop Start")
 
-    def render_loop():
+    def render_loop(self):
         print("Render Loop Start")
 
-    def poll_events():
+    def poll_events(self):
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:  
                 return False
