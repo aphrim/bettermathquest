@@ -5,10 +5,12 @@ class Game:
     def __init__(self):
         self.running = True
         self.screen = None
+        self.pressed_keys = []
 
         self.init_game()
 
     def game_loop(self):
+        self.pressed_keys = pygame.key.get_pressed()
         print("Game Loop Start")
 
     def render_loop(self):
