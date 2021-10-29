@@ -5,7 +5,7 @@ from pygame.locals import *
 class Game:
     def __init__(self):
         self.running = True
-        self.screen = init_game()
+        self.screen = self.init_game()
 
     def game_loop():
         print("Game Loop Start")
