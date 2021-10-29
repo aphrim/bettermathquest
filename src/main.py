@@ -5,7 +5,9 @@ from pygame.locals import *
 class Game:
     def __init__(self):
         self.running = True
-        self.screen = self.init_game()
+        self.screen = None
+
+        self.init_game()
 
     def game_loop():
         print("Game Loop Start")
@@ -21,11 +23,11 @@ class Game:
         pygame.display.flip()
         return True
 
-    def init_game():
+    def init_game(self):
         print("Game Init Start")
         pygame.init()
         screen = pygame.display.set_mode((400,500)) 
-        screen
+        self.screen = screen
 
 
 game = Game()
