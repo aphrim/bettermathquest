@@ -1,8 +1,17 @@
 import pickle
 from pathlib import Path
 
+def resolve_assets():
+    cur_path = Path(__file__)
+    while cur_path != Path('/') and Path('assets') not in cur_path.iterdir():
+        cur_path = cur_path.parent()
+    if Path('assets') in cur_path.iterdir():
+        return cur_path / 'assets'
+    else:
+        raise FileNotFoundError('Assets folder could not be found')
+
 class GameData:
-    SAVE_PATH = Path(__file__).parent().parent().parent() / 'assets'
+    SAVE_PATH = resolve_assets()
     def __setattr__(self, name, obj):
         function_type = type(lambda x: x)
         if type(obj) in [type, function_type]:
