@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from renderloop import render_loop
 from gameloop import game_loop
+from logic.game_map import GameMap, Room
 
 class Game:
     def __init__(self):
@@ -9,6 +10,8 @@ class Game:
         self.screen = None
         self.pressed_keys = []
         self.active_room = None
+        self.game_map = GameMap([[Room.make_sample_room() for y in range(10)] for x in range(10)])
+
 
         self.init_game()
 
@@ -26,14 +29,11 @@ class Game:
         screen = pygame.display.set_mode((400,500)) 
         self.screen = screen
 
-    game_loop = game_loop
-    render_loop = render_loop
-
 game = Game()
 
 while game.running:
     if not game.poll_events():
         pygame.quit()
         break
-    game.game_loop()
-    game.render_loop()
+    game_loop(game)
+    render_loop(game)
