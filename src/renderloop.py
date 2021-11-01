@@ -1,2 +1,3 @@
 def render_loop(self):
-    print("Render Loop Start")
+    pass
+    # print("Render Loop Start")

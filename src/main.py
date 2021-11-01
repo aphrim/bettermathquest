@@ -26,11 +26,14 @@ class Game:
         screen = pygame.display.set_mode((400,500)) 
         self.screen = screen
 
+    game_loop = game_loop
+    render_loop = render_loop
+
 game = Game()
 
 while game.running:
     if not game.poll_events():
         pygame.quit()
         break
-    game_loop(game)
-    render_loop(game)
+    game.game_loop()
+    game.render_loop()
